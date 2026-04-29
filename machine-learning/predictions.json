@@ -1,0 +1,16 @@
+[
+  {
+    "scene_id": "shelf_item_01",
+    "predictions": [
+      { "name": "Arduino Kit", "confidence": 0.95 },
+      { "name": "USB Cable", "confidence": 0.82 }
+    ]
+  },
+  {
+    "scene_id": "shelf_item_02",
+    "predictions": [
+      { "name": "USB Cable", "confidence": 0.94 },
+      { "name": "Arduino Kit", "confidence": 0.65 }
+    ]
+  }
+]

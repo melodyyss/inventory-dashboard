@@ -1,0 +1,4 @@
+{"timestamp": "2026-04-28T15:06:54.412926", "scene_id": "shelf_item_01", "item": "USB Cable", "event_type": "UNCERTAIN", "confidence": 0.82, "recommended_action": "Manual review required due to low confidence"}
+{"timestamp": "2026-04-28T15:06:54.412932", "scene_id": "shelf_item_02", "item": "Arduino Kit", "event_type": "UNCERTAIN", "confidence": 0.65, "recommended_action": "Manual review required due to low confidence"}
+{"timestamp": "2026-04-28T15:06:54.412933", "scene_id": "shelf_item_01", "item": "Arduino Kit", "event_type": "VERIFIED", "confidence": 0.95, "recommended_action": "No action needed"}
+{"timestamp": "2026-04-28T15:06:54.412935", "scene_id": "shelf_item_02", "item": "USB Cable", "event_type": "DISCREPANCY", "confidence": 0.94, "recommended_action": "Manual review: shelf image predicts item exists, but database says unavailable"}
