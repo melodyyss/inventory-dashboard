@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -28,12 +28,13 @@ app.get("/inventory", (req, res) => {
   res.json(inventory);
 });
 
+
 app.post("/inventory", (req, res) => {
   const newItem = {
     id: inventory.length + 1,
     name: req.body.name,
     category: req.body.category,
-    quantity: req.body.quantity,
+    quantity: Number(req.body.quantity),
     status: req.body.status,
   };
 
@@ -41,6 +42,8 @@ app.post("/inventory", (req, res) => {
 
   res.json({
     message: "item added successfully",
+    item: newItem,
+    inventory: inventory,
   });
 });
 
