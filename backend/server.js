@@ -4,10 +4,8 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST"],
-}));
+app.options("*", cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 let inventory = [
