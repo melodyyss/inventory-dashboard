@@ -53,28 +53,30 @@ function InventoryList() {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    await fetch("https://inventory-dashboard-6rs9.onrender.com/inventory", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        ...formData,
-        quantity: Number(formData.quantity),
-      }),
-    });
+  const response = await fetch("https://inventory-dashboard-6rs9.onrender.com/inventory", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ...formData,
+      quantity: Number(formData.quantity),
+    }),
+  });
 
-    setFormData({
-      name: "",
-      category: "",
-      quantity: "",
-      status: "Available",
-    });
+  const result = await response.json();
 
-    fetchInventory();
-  };
+  setInventory(result.inventory);
+
+  setFormData({
+    name: "",
+    category: "",
+    quantity: "",
+    status: "Available",
+  });
+};
 
   return (
     <div>
