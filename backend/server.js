@@ -4,8 +4,7 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.options("*", cors());
-app.use(cors({ origin: "*" }));
+app.use(cors());
 app.use(express.json());
 
 let inventory = [
@@ -25,10 +24,13 @@ let inventory = [
   },
 ];
 
+app.get("/", (req, res) => {
+  res.send("Inventory backend is running");
+});
+
 app.get("/inventory", (req, res) => {
   res.json(inventory);
 });
-
 
 app.post("/inventory", (req, res) => {
   const newItem = {
@@ -44,10 +46,10 @@ app.post("/inventory", (req, res) => {
   res.json({
     message: "item added successfully",
     item: newItem,
-    inventory: inventory,
+    inventory,
   });
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
