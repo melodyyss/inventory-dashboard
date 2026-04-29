@@ -10,7 +10,7 @@ function InventoryList() {
   });
 
   const fetchInventory = async () => {
-    const response = await fetch("http://localhost:3001/inventory");
+    const response = await fetch("https://inventory-dashboard-6rs9.onrender.com/inventory");
     const data = await response.json();
     setInventory(data);
   };
