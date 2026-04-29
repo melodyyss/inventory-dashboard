@@ -55,7 +55,7 @@ function InventoryList() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    await fetch("http://localhost:3001/inventory", {
+    await fetch("https://inventory-dashboard-6rs9.onrender.com/inventory", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
